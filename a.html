@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Valentine's Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7e0e0;
+        }
+
+        #image-container {
+            margin-bottom: 20px;
+        }
+
+        #buttons-container {
+            text-align: center;
+        }
+
+        .custom-button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #yes-button {
+            background-color: #00FF00; /* Strong Green */
+            color: #fff;
+        }
+
+        #no-button {
+            background-color: #FF0000; /* Strong Red */
+            color: #fff;
+        }
+
+        #text-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <img src="valentine.jpg" alt="Valentine's Image" style="max-width: 100%; height: auto;">
+        <p id="text-container">bidi mi valentine plz</p>
+    </div>
+
+    <div id="buttons-container">
+        <button id="yes-button" class="custom-button" onclick="growButton('yes')">bidi mi valentines</button>
+        <button id="no-button" class="custom-button" onclick="growButton('no')">NE</button>
+    </div>
+
+    <script>
+        let yesButton = document.getElementById('yes-button');
+        let noButton = document.getElementById('no-button');
+
+        function growButton(buttonType) {
+            if (buttonType === 'no') {
+                // Change text for both buttons when 'No' is pressed
+                let yesTexts = ["PLEASE", "TEMOLAM", "kje ti dam da me peggas???","go pravev ova 2 saati temolam ","gazi me ??"];
+                let noTexts = ["KUCKA", "ASSHOLE", "ubi se","nikoj ne te saka","KURVESTINA"];
+
+                let randomYesText = yesTexts[Math.floor(Math.random() * yesTexts.length)];
+                let randomNoText = noTexts[Math.floor(Math.random() * noTexts.length)];
+
+                yesButton.innerText = randomYesText;
+                noButton.innerText = randomNoText;
+
+                let fontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+                fontSize = parseFloat(fontSize);
+                fontSize *= 1.2; // Increase size by 20%
+                yesButton.style.fontSize = fontSize + 'px';
+            } else if (buttonType === 'yes') {
+                // Change text for 'Yes' button when 'Yes' is pressed
+                let yesTexts = ["Sure, why not!", "Absolutely!", "You got it!"];
+                let randomYesText = yesTexts[Math.floor(Math.random() * yesTexts.length)];
+                yesButton.innerText = randomYesText;
+
+                // Display a 9-digit number in a popup
+                let randomNineDigitNumber = Math.floor(100000000 + Math.random() * 900000000);
+                alert("Your special Valentine's number is: " + "075-402-130");
+            }
+        }
+    </script>
+</body>
+</html>
